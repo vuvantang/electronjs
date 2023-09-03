@@ -88,7 +88,7 @@ const createWindow = async () => {
     height: 400,
     // maxHeight: 400,
     // maxWidth: 800,
-    icon: getAssetPath('icon.png'),
+    icon: getAssetPath('icon.ico'),
     frame: false,
     titleBarStyle: 'hidden',
     // maximizable: false,

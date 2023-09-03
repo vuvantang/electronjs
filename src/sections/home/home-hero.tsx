@@ -34,7 +34,7 @@ const StyledRoot = styled('div')(({ theme }) => ({
       theme.palette.background.default,
       theme.palette.mode === 'light' ? 0.9 : 0.94
     ),
-    imgUrl: '/assets/background/overlay_3.jpg',
+    imgUrl: Assets.background.overlay_3,
   }),
   width: '100%',
   height: '100vh',

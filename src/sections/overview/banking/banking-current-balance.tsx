@@ -16,6 +16,7 @@ import { useBoolean } from 'src/hooks/use-boolean';
 import Iconify from 'src/components/iconify';
 import CustomPopover, { usePopover } from 'src/components/custom-popover';
 import Carousel, { CarouselDots, useCarousel } from 'src/components/carousel';
+import { Assets } from 'src/utils/assets';
 
 // ----------------------------------------------------------------------
 
@@ -54,7 +55,7 @@ export default function BankingCurrentBalance({ list, sx }: Props) {
       sx={{
         ...bgGradient({
           color: alpha(theme.palette.grey[900], 0.8),
-          imgUrl: '/assets/background/overlay_2.jpg',
+          imgUrl: Assets.background.overlay_2,
         }),
         height: 262,
         borderRadius: 2,
@@ -146,8 +147,16 @@ function CardItem({ card }: CardItemProps) {
               {currency.value ? '********' : fCurrency(balance)}
             </Typography>
 
-            <IconButton color="inherit" onClick={currency.onToggle} sx={{ opacity: 0.48 }}>
-              <Iconify icon={currency.value ? 'solar:eye-bold' : 'solar:eye-closed-bold'} />
+            <IconButton
+              color="inherit"
+              onClick={currency.onToggle}
+              sx={{ opacity: 0.48 }}
+            >
+              <Iconify
+                icon={
+                  currency.value ? 'solar:eye-bold' : 'solar:eye-closed-bold'
+                }
+              />
             </IconButton>
           </Stack>
         </div>
@@ -158,8 +167,18 @@ function CardItem({ card }: CardItemProps) {
           justifyContent="flex-end"
           sx={{ typography: 'subtitle1' }}
         >
-          <Box sx={{ bgcolor: 'white', lineHeight: 0, px: 0.75, borderRadius: 0.5, mr: 1 }}>
-            {cardType === 'mastercard' && <Iconify width={24} icon="logos:mastercard" />}
+          <Box
+            sx={{
+              bgcolor: 'white',
+              lineHeight: 0,
+              px: 0.75,
+              borderRadius: 0.5,
+              mr: 1,
+            }}
+          >
+            {cardType === 'mastercard' && (
+              <Iconify width={24} icon="logos:mastercard" />
+            )}
             {cardType === 'visa' && <Iconify width={24} icon="logos:visa" />}
           </Box>
           {cardNumber}
@@ -167,17 +186,29 @@ function CardItem({ card }: CardItemProps) {
 
         <Stack direction="row" spacing={5}>
           <Stack spacing={1}>
-            <Typography sx={{ typography: 'caption', opacity: 0.48 }}>Card Holder</Typography>
-            <Typography sx={{ typography: 'subtitle1' }}>{cardHolder}</Typography>
+            <Typography sx={{ typography: 'caption', opacity: 0.48 }}>
+              Card Holder
+            </Typography>
+            <Typography sx={{ typography: 'subtitle1' }}>
+              {cardHolder}
+            </Typography>
           </Stack>
           <Stack spacing={1}>
-            <Typography sx={{ typography: 'caption', opacity: 0.48 }}>Valid Dates</Typography>
-            <Typography sx={{ typography: 'subtitle1' }}>{cardValid}</Typography>
+            <Typography sx={{ typography: 'caption', opacity: 0.48 }}>
+              Valid Dates
+            </Typography>
+            <Typography sx={{ typography: 'subtitle1' }}>
+              {cardValid}
+            </Typography>
           </Stack>
         </Stack>
       </Stack>
 
-      <CustomPopover open={popover.open} onClose={popover.onClose} sx={{ width: 140 }}>
+      <CustomPopover
+        open={popover.open}
+        onClose={popover.onClose}
+        sx={{ width: 140 }}
+      >
         <MenuItem onClick={handleDelete} sx={{ color: 'error.main' }}>
           <Iconify icon="solar:trash-bin-trash-bold" />
           Delete

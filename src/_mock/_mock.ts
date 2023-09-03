@@ -1,5 +1,6 @@
 import { sub } from 'date-fns';
 //
+import { ASSETS_API } from 'src/config-global';
 import {
   _id,
   _ages,
@@ -62,14 +63,17 @@ export const _mock = {
   },
   // Image
   image: {
-    cover: (index: number) => `/assets/images/cover/cover_${index + 1}.jpg`,
-    avatar: (index: number) => `/assets/images/avatar/avatar_${index + 1}.jpg`,
-    travel: (index: number) => `/assets/images/travel/travel_${index + 1}.jpg`,
+    cover: (index: number) =>
+      `${ASSETS_API}/assets/images/cover/cover_${index + 1}.jpg`,
+    avatar: (index: number) =>
+      `${ASSETS_API}/assets/images/avatar/avatar_${index + 1}.jpg`,
+    travel: (index: number) =>
+      `${ASSETS_API}/assets/images/travel/travel_${index + 1}.jpg`,
     company: (index: number) =>
-      `/assets/images/company/company_${index + 1}.png`,
+      `${ASSETS_API}/assets/images/company/company_${index + 1}.png`,
     product: (index: number) =>
-      `/assets/images/m_product/product_${index + 1}.jpg`,
+      `${ASSETS_API}/assets/images/m_product/product_${index + 1}.jpg`,
     portrait: (index: number) =>
-      `/assets/images/portrait/portrait_${index + 1}.jpg`,
+      `${ASSETS_API}/assets/images/portrait/portrait_${index + 1}.jpg`,
   },
 };

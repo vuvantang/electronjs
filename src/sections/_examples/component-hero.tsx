@@ -12,6 +12,7 @@ import { useResponsive } from 'src/hooks/use-responsive';
 import { bgGradient } from 'src/theme/css';
 // components
 import { MotionContainer, varFade } from 'src/components/animate';
+import { Assets } from 'src/utils/assets';
 
 // ----------------------------------------------------------------------
 
@@ -30,7 +31,7 @@ const StyledBg = styled('div')(({ theme }) => ({
   transform: 'scaleX(-1)',
   ...bgGradient({
     color: alpha(theme.palette.background.default, 0.9),
-    imgUrl: '/assets/background/overlay_4.jpg',
+    imgUrl: Assets.background.overlay_4,
   }),
 }));
 
@@ -68,7 +69,7 @@ export default function ComponentHero() {
             <Box
               component="img"
               alt="illustrations characters"
-              src="/assets/illustrations/characters/character_7.png"
+              src={Assets.illustrations.characters.character_7}
               sx={{ maxWidth: 320 }}
             />
           </m.div>

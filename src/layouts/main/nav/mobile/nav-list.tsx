@@ -9,6 +9,7 @@ import { useBoolean } from 'src/hooks/use-boolean';
 import { NavSectionVertical } from 'src/components/nav-section';
 import { usePathname } from 'src/routes/hook';
 //
+import { Assets } from 'src/utils/assets';
 import { NavItemProps } from '../types';
 import NavItem from './nav-item';
 
@@ -50,7 +51,7 @@ export default function NavList({ item }: NavListProps) {
                     backgroundPosition: 'center',
                     bgcolor: 'background.neutral',
                     backgroundRepeat: 'no-repeat',
-                    backgroundImage: 'url(/assets/illustrations/illustration_dashboard.png)',
+                    backgroundImage: `url(${Assets.illustrations.illustration_dashboard})`,
                     [`& .${listItemTextClasses.root}`]: {
                       display: 'none',
                     },

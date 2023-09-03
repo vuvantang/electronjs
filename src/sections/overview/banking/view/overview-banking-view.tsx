@@ -4,10 +4,15 @@ import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Unstable_Grid2';
 // _mock
-import { _bankingContacts, _bankingCreditCard, _bankingRecentTransitions } from 'src/_mock';
+import {
+  _bankingContacts,
+  _bankingCreditCard,
+  _bankingRecentTransitions,
+} from 'src/_mock';
 // components
 import { useSettingsContext } from 'src/components/settings';
 //
+import { Assets } from 'src/utils/assets';
 import BankingContacts from '../banking-contacts';
 import BankingQuickTransfer from '../banking-quick-transfer';
 import BankingInviteFriends from '../banking-invite-friends';
@@ -92,27 +97,55 @@ export default function OverviewBankingView() {
               title="Balance Statistics"
               subheader="(+43% Income | +12% Expense) than last year"
               chart={{
-                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+                categories: [
+                  'Jan',
+                  'Feb',
+                  'Mar',
+                  'Apr',
+                  'May',
+                  'Jun',
+                  'Jul',
+                  'Aug',
+                  'Sep',
+                ],
                 series: [
                   {
                     type: 'Week',
                     data: [
-                      { name: 'Income', data: [10, 41, 35, 151, 49, 62, 69, 91, 48] },
-                      { name: 'Expenses', data: [10, 34, 13, 56, 77, 88, 99, 77, 45] },
+                      {
+                        name: 'Income',
+                        data: [10, 41, 35, 151, 49, 62, 69, 91, 48],
+                      },
+                      {
+                        name: 'Expenses',
+                        data: [10, 34, 13, 56, 77, 88, 99, 77, 45],
+                      },
                     ],
                   },
                   {
                     type: 'Month',
                     data: [
-                      { name: 'Income', data: [148, 91, 69, 62, 49, 51, 35, 41, 10] },
-                      { name: 'Expenses', data: [45, 77, 99, 88, 77, 56, 13, 34, 10] },
+                      {
+                        name: 'Income',
+                        data: [148, 91, 69, 62, 49, 51, 35, 41, 10],
+                      },
+                      {
+                        name: 'Expenses',
+                        data: [45, 77, 99, 88, 77, 56, 13, 34, 10],
+                      },
                     ],
                   },
                   {
                     type: 'Year',
                     data: [
-                      { name: 'Income', data: [76, 42, 29, 41, 27, 138, 117, 86, 63] },
-                      { name: 'Expenses', data: [80, 55, 34, 114, 80, 130, 15, 28, 55] },
+                      {
+                        name: 'Income',
+                        data: [76, 42, 29, 41, 27, 138, 117, 86, 63],
+                      },
+                      {
+                        name: 'Expenses',
+                        data: [80, 55, 34, 114, 80, 130, 15, 28, 55],
+                      },
                     ],
                   },
                 ],
@@ -163,7 +196,10 @@ export default function OverviewBankingView() {
 
         <Grid xs={12} md={4}>
           <Stack spacing={3}>
-            <BankingQuickTransfer title="Quick Transfer" list={_bankingContacts} />
+            <BankingQuickTransfer
+              title="Quick Transfer"
+              list={_bankingContacts}
+            />
 
             <BankingContacts
               title="Contacts"
@@ -175,7 +211,7 @@ export default function OverviewBankingView() {
               price="$50"
               title={`Invite friends \n and earn`}
               description="Praesent egestas tristique nibh. Duis lobortis massa imperdiet quam."
-              img="/assets/illustrations/characters/character_11.png"
+              img={Assets.illustrations.characters.character_11}
             />
           </Stack>
         </Grid>

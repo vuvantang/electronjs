@@ -9,6 +9,7 @@ import { RouterLink } from 'src/routes/components';
 // components
 import Iconify from 'src/components/iconify';
 //
+import { Assets } from 'src/utils/assets';
 import { NavItemDesktopProps, NavItemProps } from '../types';
 import { ListItem } from './styles';
 
@@ -30,7 +31,13 @@ export const NavItem = forwardRef<HTMLDivElement, NavItemDesktopProps>(
       >
         {title}
 
-        {!!children && <Iconify width={16} icon="eva:arrow-ios-downward-fill" sx={{ ml: 1 }} />}
+        {!!children && (
+          <Iconify
+            width={16}
+            icon="eva:arrow-ios-downward-fill"
+            sx={{ ml: 1 }}
+          />
+        )}
       </ListItem>
     );
 
@@ -63,7 +70,11 @@ interface NavItemDashboardProps extends LinkProps {
   item: NavItemProps;
 }
 
-export function NavItemDashboard({ item, sx, ...other }: NavItemDashboardProps) {
+export function NavItemDashboard({
+  item,
+  sx,
+  ...other
+}: NavItemDashboardProps) {
   return (
     <Link component={RouterLink} href={item.path} sx={{ width: 1 }} {...other}>
       <CardActionArea
@@ -89,7 +100,7 @@ export function NavItemDashboard({ item, sx, ...other }: NavItemDashboardProps) 
           <Box
             component="img"
             alt="illustration_dashboard"
-            src="/assets/illustrations/illustration_dashboard.png"
+            src={Assets.illustrations.illustration_dashboard}
           />
         </m.div>
       </CardActionArea>

@@ -6,6 +6,7 @@ import Stack from '@mui/material/Stack';
 import { useResponsive } from 'src/hooks/use-responsive';
 // components
 import Logo from 'src/components/logo';
+import { Assets } from 'src/utils/assets';
 
 // ----------------------------------------------------------------------
 
@@ -52,7 +53,7 @@ export default function AuthModernLayout({ children, image }: Props) {
       <Box
         component="img"
         alt="auth"
-        src={image || '/assets/background/overlay_3.jpg'}
+        src={image || Assets.background.overlay_3}
         sx={{
           top: 16,
           left: 16,
@@ -82,7 +83,7 @@ export default function AuthModernLayout({ children, image }: Props) {
           opacity: { xs: 0.24, md: 0 },
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center center',
-          backgroundImage: 'url(/assets/background/overlay_4.jpg)',
+          backgroundImage: `url(${Assets.background.overlay_4})`,
         },
       }}
     >
