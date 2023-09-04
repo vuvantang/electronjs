@@ -16,6 +16,7 @@
     "email": "vuvantang.cntt@gmail.com",
     "url": "https://github.com/vuvantang"
   },
+  "repository": "",
   "contributors": [
     {
       "name": "Vu Van Tang",
@@ -270,7 +271,8 @@
     },
     "win": {
       "target": [
-        "nsis"
+        "nsis",
+        "zip"
       ]
     },
     "linux": {
