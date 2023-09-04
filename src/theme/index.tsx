@@ -2,7 +2,11 @@ import merge from 'lodash/merge';
 import { useMemo } from 'react';
 // @mui
 import CssBaseline from '@mui/material/CssBaseline';
-import { createTheme, ThemeProvider as MuiThemeProvider, ThemeOptions } from '@mui/material/styles';
+import {
+  createTheme,
+  ThemeProvider as MuiThemeProvider,
+  ThemeOptions,
+} from '@mui/material/styles';
 // locales
 import { useLocales } from 'src/locales';
 // components
@@ -34,7 +38,10 @@ export default function ThemeProvider({ children }: Props) {
 
   const presetsOption = presets(settings.themeColorPresets);
 
-  const contrastOption = contrast(settings.themeContrast === 'bold', settings.themeMode);
+  const contrastOption = contrast(
+    settings.themeContrast === 'bold',
+    settings.themeMode
+  );
 
   const directionOption = direction(settings.themeDirection);
 
@@ -63,12 +70,21 @@ export default function ThemeProvider({ children }: Props) {
         // Contrast: remove if not in use
         contrastOption.theme
       ),
-    [baseOption, directionOption, darkModeOption, presetsOption, contrastOption.theme]
+    [
+      baseOption,
+      directionOption,
+      darkModeOption,
+      presetsOption,
+      contrastOption.theme,
+    ]
   );
 
   const theme = createTheme(memoizedValue as ThemeOptions);
 
-  theme.components = merge(componentsOverrides(theme), contrastOption.components);
+  theme.components = merge(
+    componentsOverrides(theme),
+    contrastOption.components
+  );
 
   const themeWithLocale = useMemo(
     () => createTheme(theme, currentLang.systemValue),

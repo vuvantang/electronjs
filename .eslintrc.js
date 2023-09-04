@@ -27,6 +27,7 @@ module.exports = {
     'jsx-a11y/anchor-is-valid': 'off',
     'react/no-unstable-nested-components': 'off',
     'react/no-children-prop': 'off',
+    'jsx-a11y/control-has-associated-label': 'off',
   },
   parserOptions: {
     ecmaVersion: 2020,
