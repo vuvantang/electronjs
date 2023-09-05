@@ -16,7 +16,10 @@
     "email": "vuvantang.cntt@gmail.com",
     "url": "https://github.com/vuvantang"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/electron-react-boilerplate/electron-react-boilerplate.git"
+  },
   "contributors": [
     {
       "name": "Vu Van Tang",
